@@ -3,6 +3,12 @@ import Image from "next/image";
 import { assets } from "../assets/assets";
 
 const Navbar = ({isDarkMode,setIsDarkMode}) => {
+  const handleContactClick = () => {
+    window.location.href = "mailto:your-adarsh27912@gmail.com";
+  };
+
+
+
   const [isScroll, setIsScroll] = useState(false);
   const sideMenuRef = useRef();
   const openMenu = () => {
@@ -80,7 +86,7 @@ const Navbar = ({isDarkMode,setIsDarkMode}) => {
            
             <Image src={ isDarkMode?assets.sun_icon: assets.moon_icon}  alt="" className="w-6" />
           </button>
-          <a
+          <a onClick={handleContactClick}
             href="#contact"
             className="hidden lg:flex gap-2 items-center px-10 py-2 border border-gray-500 rounded-full font-ovo"
           >
